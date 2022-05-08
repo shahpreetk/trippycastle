@@ -72,11 +72,15 @@
   font-size: large;
 }
 
+.ticketboxtext8{
+  color: gray;
+  font-size: small;
+}
+
 .optionimage6 {
   background: no-repeat;
   background-position: center;
   border: none;
-  background-image: url("../../public/assets/pages/AlnwickCastle/AlnwickCastleIcon/4.png");
   background-size: contain;
   border-radius: 25px;
 }

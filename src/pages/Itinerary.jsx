@@ -40,7 +40,7 @@ const Itinerary = () => {
         setDate(localStorage.getItem("date").split("T")[0]);
     }
         , [destination, localStorage]);
-
+console.log({castleData});
     return (
         <IonContent className="ion-margin-bottom">
             <IonRow className="itinerarybackgroundimage">
@@ -179,12 +179,14 @@ const Itinerary = () => {
                                                 <IonText className="ticketboxtext7">Bus Ticket Price: £{outboundJourney.ticketFee} + £{returnJourney.ticketFee}</IonText>
                                                 <br />
                                                 <IonText className="ticketboxtext7">Castle Ticket Price: £{castleData[0].ticketFee}</IonText>
+                                                <br />
+                                                <IonText className="ticketboxtext8">Note: All prices showed are standard fares. Discounts are available on Castle tickets for students.</IonText>
                                             </IonCol>
                                             <IonCol size="12">
                                                 <IonRow className="ion-align-items-center">
                                                     <IonCol className="ion-justify-content-start">
                                                         <IonThumbnail >
-                                                            <IonImg className="optionimage6"></IonImg>
+                                                            <IonImg className="optionimage6" src={castleData[0].imgSrcPath} alt="castle image"></IonImg>
                                                         </IonThumbnail>
                                                     </IonCol>
                                                     <IonCol className="ion-text-right ion-justify-content-end">
