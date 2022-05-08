@@ -35,6 +35,17 @@ const BarnardCastleSearch = () => {
                 const src = x.departureBusStop.split(" ")[0].toLowerCase();
                 return x.returnTrip === "0" && t >= time && src === source;
             });
+            departureBus.sort((a, b) => {
+                const aTime = a.departureTime.split(" ")[0];
+                const bTime = b.departureTime.split(" ")[0];
+                const aHour = aTime.split(":")[0];
+                const aMin = aTime.split(":")[1];
+                const aTimeNum = parseInt(aHour + aMin);
+                const bHour = bTime.split(":")[0];
+                const bMin = bTime.split(":")[1];
+                const bTimeNum = parseInt(bHour + bMin);
+                return aTimeNum - bTimeNum;
+            });
             setBusData(departureBus);
         });
     }, [localStorage, time, source]);
