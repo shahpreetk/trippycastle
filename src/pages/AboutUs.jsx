@@ -56,10 +56,10 @@ const AboutUs = () => {
           <br />
           <IonCard className="ion-margin-top" style={{ marginLeft: "0px", backgroundColor: "#ffffff" }} >
             <IonCardContent>
-              <img src="/assets/newcastlebuilding.jpg" />
+              <img alt="newcastle university building" src="/assets/newcastlebuilding.jpg" />
               <IonRow>
                 <IonRow>
-                  <img src="/assets/newcastlelogo.jpg" />
+                  <img alt="newcastle university logo" src="/assets/newcastlelogo.jpg" />
                 </IonRow>
                 <IonRow>
                   <h3>Founded in 1963, Newcastle University is a member of the Russell Group and is involved in world renowned research, especially concerning science and medicine.</h3>
