@@ -1,0 +1,85 @@
+.logoImageNavbar {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.bigTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.jollyButton {
+  --background: rgba(2, 68, 142, 1);
+  --background: -moz-linear-gradient(
+    left,
+    rgba(2, 68, 142, 1) 0%,
+    rgba(1, 67, 141, 1) 44%,
+    rgba(1, 66, 140, 1) 100%
+  );
+  --background: -webkit-linear-gradient(
+    left,
+    rgba(2, 68, 142, 1) 0%,
+    rgba(1, 67, 141, 1) 44%,
+    rgba(1, 66, 140, 1) 100%
+  );
+  --background: -o-linear-gradient(
+    left,
+    rgba(2, 68, 142, 1) 0%,
+    rgba(1, 67, 141, 1) 44%,
+    rgba(1, 66, 140, 1) 100%
+  );
+  --background: -ms-linear-gradient(
+    left,
+    rgba(2, 68, 142, 1) 0%,
+    rgba(1, 67, 141, 1) 44%,
+    rgba(1, 66, 140, 1) 100%
+  );
+  --background: linear-gradient(
+    to right,
+    rgba(2, 68, 142, 1) 0%,
+    rgba(1, 67, 141, 1) 44%,
+    rgba(1, 66, 140, 1) 100%
+  );
+
+  --color: #ffffff;
+}
+
+.jollyButton:hover {
+  --background: rgb(9, 91, 185);
+  --background: linear-gradient(
+    to right,
+    rgb(15, 88, 172, 1) 0%,
+    rgba(15, 88, 172, 1) 44%,
+    rgba(15, 88, 172, 1) 100%
+  );
+}
+
+.linkStyles {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .noShowLarge {
+    display: none;
+  }
+
+  .smallTitle {
+    display: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .logoImageNavbar {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .noShowSmall {
+    display: none;
+  }
+}

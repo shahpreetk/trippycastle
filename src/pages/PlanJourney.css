@@ -1,0 +1,133 @@
+.plannerbackgroundimage {
+  background: url("../../public/assets/castles/auckland.jpg");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden;
+    background-position: absolute;
+    padding-bottom: 3%;
+    padding-top: 5%;
+}
+
+.cardcolumnplanjourney {
+  max-width: 50%;
+}
+
+.ticketboxcard {
+  margin-left: 5%;
+  max-width: fit-content;
+  background-color: #319688;
+  opacity: 0.9;
+  border-radius: 5%;
+  padding: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.ticketboxcol1 {
+  padding-left: 0px;
+  width: 50%;
+}
+
+.ticketboxcol2 {
+  padding-right: 0px;
+  width: 50%;
+}
+
+.ticketboxitem {
+  background-color: #319688;
+  opacity: 0.9;
+  width: 100%;
+  border-radius: 0%;
+}
+
+.alert-wrapper.sc-ion-alert-md {
+  min-width: 30%;
+}
+
+.linkStyles {
+  width: 90%;
+}
+
+@media only screen and (max-width: 600px) {
+  .cardcolumnplanjourney {
+    max-width: 100%;
+  }
+
+  .ticketboxcard {
+    max-width: fit-content;
+  }
+
+  .alert-wrapper.sc-ion-alert-md,
+  .alert-wrapper.sc-ion-alert-ios {
+    min-width: 95%;
+  }
+
+  .ticketboxcol1 {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+  }
+
+  .ticketboxcol2 {
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+  }
+}
+
+@media not screen and (max-width: 600px) {
+  .cardcolumnplanjourney {
+    max-width: 100%;
+  }
+  .ticketboxcard {
+    margin-top: 8%;
+    max-width: fit-content;
+    /* height: 80vh; */
+  }
+
+  .alert-wrapper.sc-ion-alert-md,
+  .alert-wrapper.sc-ion-alert-ios {
+    min-width: 95%;
+  }
+
+  .ticketboxcol1 {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+  }
+
+  .ticketboxcol2 {
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .cardcolumnplanjourney {
+    max-width: 50%;
+  }
+  .ticketboxcard {
+    margin-top: 5%;
+    margin-left: 5%;
+    max-width: fit-content;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .alert-wrapper.sc-ion-alert-md {
+    min-width: 30%;
+  }
+
+  .ticketboxcol1 {
+    padding-left: 0px;
+    padding-right: 8px;
+    width: 50%;
+  }
+
+  .ticketboxcol2 {
+    padding-right: 0px;
+    padding-left: 8px;
+    width: 50%;
+  }
+}

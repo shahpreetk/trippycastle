@@ -1,0 +1,11 @@
+@media only screen and (max-width: 600px) {
+  /* over rides column size to make it responsive */
+  .colSize {
+    min-width: 100%;
+    margin: auto;
+  }
+
+  .creators {
+    font-size: small;
+  }
+}

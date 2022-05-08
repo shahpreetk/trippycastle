@@ -1,0 +1,148 @@
+.itinerarybackgroundimage {
+  background: url("../../public/assets/castles/bamburgh.jpg");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden;
+    background-position: absolute;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.cardcolumn {
+  max-width: 45%;
+  min-width: 45%;
+}
+
+.ticketboxcarditinerary {
+  background-color: white;
+  width: 100%;
+  min-width: 100%;
+  border-radius: 5%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  margin-left: 5%;
+}
+
+.ticketboxrow {
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 2px;
+}
+
+.ticketboxtext {
+  color: #61201c;
+}
+
+.ticketboxtext1 {
+  font-size: large;
+  font-style: italic;
+}
+
+.ticketboxtext2 {
+  color: black;
+  font-style: italic;
+}
+
+.ticketboxtext4 {
+  color: black;
+  font-weight: bold;
+}
+
+.journeytype {
+  font-weight: 700;
+}
+
+.ticketboxtext5 {
+  color: black;
+  font-size: large;
+}
+
+.ticketboxtext6 {
+  color: black;
+  font-size: smaller;
+}
+
+.optionimage1 {
+  font-size: x-large;
+}
+
+.ticketboxtext7 {
+  color: black;
+  font-style: italic;
+  font-size: large;
+}
+
+.optionimage6 {
+  background: no-repeat;
+  background-position: center;
+  border: none;
+  background-image: url("../../public/assets/pages/AlnwickCastle/AlnwickCastleIcon/4.png");
+  background-size: contain;
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  .backgroundimage {
+    padding-top: 0%;
+  }
+  .ticketboxcarditinerary {
+    width: 100%;
+    min-width: 100%;
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+
+  .cardcolumn {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .ticketboxtext1 {
+    font-size: medium;
+    font-style: italic;
+  }
+}
+
+@media not screen and (max-width: 600px) {
+  .backgroundimage {
+    padding-top: 0%;
+  }
+  .ticketboxcarditinerary {
+    width: 100%;
+    min-width: 100%;
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+
+  .cardcolumn {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .ticketboxtext1 {
+    font-size: medium;
+    font-style: italic;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .backgroundimage {
+    padding-top: 5%;
+  }
+  .ticketboxcarditinerary {
+    width: 100%;
+    min-width: 100%;
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  .cardcolumn {
+    max-width: 45%;
+    min-width: 45%;
+  }
+
+  .ticketboxtext1 {
+    font-size: large;
+    font-style: italic;
+  }
+}
