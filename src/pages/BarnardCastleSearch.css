@@ -104,6 +104,7 @@
   background-color: white;
   opacity: 0.9;
   border-radius: 10px;
+  margin: 3%;
 }
 
 .option1text1 {
@@ -119,10 +120,7 @@
 
 .optiontext1 {
   font-size: x-large;
-}
-
-.optiontext2 {
-  font-size: x-large;
+  margin: 0 3%;
 }
 
 .ticketboxbutton1 {

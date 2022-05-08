@@ -65,7 +65,7 @@ const AlnwickCastleSearch = () => {
                                 </IonRow>
                                 {/* Displays buses and their timings */}
                                 {busData.length > 0 ? busData.map((eachBus) => (
-                                    <IonRow key={eachBus.id} className="ticketoption1 ion-margin ion-justify-content-center">
+                                    <IonRow key={eachBus.id} className="ticketoption1 ion-justify-content-center">
                                         <IonCol tabIndex={eachBus.id} className="busDetailsCol">
                                             <Link onClick={() => {
                                                 localStorage.setItem("outboundBus", JSON.stringify(eachBus));
@@ -90,10 +90,10 @@ const AlnwickCastleSearch = () => {
                                                     <IonRow className="ion-justify-content-center ion-align-items-center">
                                                         <IonCol size="12" className="ion-text-center">
                                                             <FaWalking size={28} style={{ color: "#475569" }} />
-                                                            <IonText className="optiontext1 ion-margin-horizontal" color="medium">{">"}</IonText>
+                                                            <IonText className="optiontext1" color="medium">{">"}</IonText>
                                                             <FaBus size={24} style={{ color: "#475569" }} />
-                                                            <IonText className="optiontext2 ion-margin-start" color="medium">{eachBus.busId}</IonText>
-                                                            <IonText className="optiontext2 ion-margin-horizontal" color="medium">{">"}</IonText>
+                                                            <IonText className="optiontext1" color="medium">{eachBus.busId}</IonText>
+                                                            <IonText className="optiontext1" color="medium">{">"}</IonText>
                                                             <FaWalking size={28} style={{ color: "#475569" }} />
                                                         </IonCol>
                                                     </IonRow>
