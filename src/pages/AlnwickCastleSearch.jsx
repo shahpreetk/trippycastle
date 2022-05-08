@@ -37,8 +37,7 @@ const AlnwickCastleSearch = () => {
             });
             setBusData(departureBus);
         });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [localStorage,time,source]);
 
     return (
         <IonContent className="ion-margin-bottom">

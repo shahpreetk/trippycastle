@@ -20,7 +20,7 @@ const BamburghCastleSearch = () => {
     // Using react hooks to set the journey details to the page
     const [destination, setDestination] = useState("");
     const time = localStorage.getItem("time");
-
+    const source = localStorage.getItem("source");
     const [busData, setBusData] = useState([]);
 
     // On page load, useEffect is called which will set the destination to display and bus data will be called from backend via axios
@@ -32,12 +32,12 @@ const BamburghCastleSearch = () => {
                 const h = d.split(":")[0];
                 const m = d.split(":")[1];
                 const t = h + m;
-                return x.returnTrip === "0" && t >= time;
+                const src = x.departureBusStop.split(" ")[0].toLowerCase();
+                return x.returnTrip === "0" && t >= time && src === source;
             });
             setBusData(departureBus);
         });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [localStorage, time, source]);
 
     return (
         <IonContent className="ion-margin-bottom">

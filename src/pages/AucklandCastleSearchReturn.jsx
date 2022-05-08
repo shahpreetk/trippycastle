@@ -18,13 +18,12 @@ import axios from "axios";
 const AucklandCastleSearchReturn = () => {
     const localStorage = window.localStorage;
     // Using react hooks to set the journey details to the page
-    const [source, setSource] = useState("");
+    const source = localStorage.getItem("source");
     const [busData, setBusData] = useState([]);
     let time = localStorage.getItem("arrivalTime");
 
     // On page load, useEffect is called which will set the destination to display in the dropdown
     useEffect(() => {
-        setSource(localStorage.getItem("source"));
         axios.get("/97be7c80a79d4d89b953502b8bbdc9ae").then((response) => {
 
             const returnBus = response.data.obj.filter(x => {
@@ -33,13 +32,13 @@ const AucklandCastleSearchReturn = () => {
                 const m = d.split(":")[1];
                 const t = h + m;
                 const leavingTime = parseInt(time) + parseInt('0200');
+                const src = x.arrivalBusStop.split(" ")[0].toLowerCase();
                 return x.returnTrip === "1" && parseInt(t)
-                    >= leavingTime;
+                    >= leavingTime && src === source;
             });
             setBusData(returnBus);
         });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [source, time]);
     return (
 
         <IonContent className="ion-margin-bottom">

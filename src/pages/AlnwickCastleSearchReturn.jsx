@@ -19,13 +19,12 @@ import "./AlnwickCastleSearchReturn.css";
 
 const AlnwickCastleSearchReturn = () => {
     const localStorage = window.localStorage;    // Using react hooks to set the journey details to the page
-    const [source, setSource] = useState("");
+    const source = localStorage.getItem("source");
     const [busData, setBusData] = useState([]);
     let time = localStorage.getItem("arrivalTime");
 
     // On page load, useEffect is called which will set the destination to display in the dropdown
     useEffect(() => {
-        setSource(localStorage.getItem("source"));
         axios.get("/bbc1ef6066024a3aa4913e8cfe5b2ecd").then((response) => {
 
             const returnBus = response.data.obj.filter(x => {
@@ -34,13 +33,14 @@ const AlnwickCastleSearchReturn = () => {
                 const m = d.split(":")[1];
                 const t = h + m;
                 const leavingTime = parseInt(time) + parseInt('0200');
+                const src = x.arrivalBusStop.split(" ")[0].toLowerCase();
                 return x.returnTrip === "1" && parseInt(t)
-                    >= leavingTime;
+                    >= leavingTime && src === source;
             });
             setBusData(returnBus);
         });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+
+    }, [time,source]);
     return (
 
         <IonContent className="ion-margin-bottom">

@@ -39,8 +39,7 @@ const Itinerary = () => {
         setTravellers(localStorage.getItem("travellers"));
         setDate(localStorage.getItem("date").split("T")[0]);
     }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        , []);
+        , [destination, localStorage]);
 
     return (
         <IonContent className="ion-margin-bottom">
