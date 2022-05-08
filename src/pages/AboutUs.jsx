@@ -12,7 +12,7 @@ const AboutUs = () => {
   return (
     <IonContent className="ion-no-padding ion-no-margin">
       <IonRow className="ion-padding-top mainrow ion-justify-content-center" style={{ backgroundColor: "#02448e" }}>
-        <IonCol className="ion-padding ion-margin-horizontal ion-margin-top" sizeMd="5" sizeSm="12">
+        <IonCol className="ion-padding" style={{margin:"3%"}} sizeMd="5" sizeSm="12">
           <br />
           <IonText color="light">
             <h1>About Us</h1>
@@ -51,13 +51,14 @@ const AboutUs = () => {
           </IonText>
         </IonCol>
 
-        <IonCol className="ion-padding-bottom ion-margin-horizontal ion-margin-top" sizeMd="5" sizeSm="12" style={{ backgroundColor: "#02448e", width: "95%" }} >
+        <IonCol className="ion-padding-bottom" sizeMd="5" sizeSm="12" style={{ backgroundColor: "#02448e", margin: "3%"}} >
           <br />
           <br />
           <IonCard className="ion-margin-top" style={{ marginLeft: "0px", backgroundColor: "#ffffff" }} >
             <IonCardContent>
               <img alt="newcastle university building" src="/assets/newcastlebuilding.jpg" />
               <IonRow>
+                <IonCol>
                 <IonRow>
                   <img alt="newcastle university logo" src="/assets/newcastlelogo.jpg" />
                 </IonRow>
@@ -69,7 +70,8 @@ const AboutUs = () => {
                 </IonRow>
                 <IonRow>
                   <h3>Because of these students' multidisciplinary backgrounds, they cultivate a unique perspective in computing whcih will excel them in their future careers and beyond.</h3>
-                </IonRow>
+                  </IonRow>
+                </IonCol>
               </IonRow>
             </IonCardContent>
           </IonCard>
