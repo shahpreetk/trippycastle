@@ -128,7 +128,7 @@ const Itinerary = () => {
                                         </IonRow>
                                         <IonRow>
                                             <IonCol className="ion-text-center">
-                                                {outboundJourney.walkingTime && <IonText>Walk {outboundJourney.walkingTime} from {outboundJourney.arrivalBusStop} to reach {destination}</IonText>}
+                                                {outboundJourney.walkingTime && <IonText>{outboundJourney.walkingTime} from {outboundJourney.arrivalBusStop} to reach {destination}</IonText>}
                                             </IonCol>
                                         </IonRow>
                                     </IonCol>
@@ -146,7 +146,7 @@ const Itinerary = () => {
                                         </IonRow>
                                         <IonRow>
                                             <IonCol className="ion-text-center">
-                                                {returnJourney.walkingTime && <IonText>Walk {returnJourney.walkingTime} from {destination} to reach {returnJourney.departureBusStop}</IonText>}
+                                                {returnJourney.walkingTime && <IonText>{returnJourney.walkingTime} from {destination} to reach {returnJourney.departureBusStop}</IonText>}
                                             </IonCol>
                                         </IonRow>
                                         <IonRow>
