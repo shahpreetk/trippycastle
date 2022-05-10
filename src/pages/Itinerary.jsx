@@ -115,7 +115,7 @@ const Itinerary = () => {
                                                 <BsArrowDown size={24} style={{ color: "black" }} />
                                             </IonCol>
                                             <IonCol size="6" className="ion-text-start">
-                                                <IonText className="ticketboxtext6">{outboundJourney.description}</IonText>
+                                                <IonText className="ticketboxtext8">{outboundJourney.description}</IonText>
                                             </IonCol>
                                         </IonRow>
                                         <IonRow>
