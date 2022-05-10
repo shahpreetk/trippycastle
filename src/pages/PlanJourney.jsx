@@ -45,45 +45,65 @@ const PlanJourney = () => {
 
         // Saves the journey details to local storage onClick of "GET TICKETS" button
         if (destination === "Alnwick Castle") {
-            const localStorage = window.localStorage;
-            localStorage.setItem("source", source.split(" ")[1].toLowerCase());
-            localStorage.setItem("destination", destination);
-            localStorage.setItem("date", selectedDate);
-            localStorage.setItem("time", time);
-            localStorage.setItem("travellers", travellers);
-            setTime("");
-            // Routing to next page
-            history.push(ROUTES.ALNWICKCASTLESEARCH);
+            if (source !== "Newcastle Haymarket Bus Station") {
+                alert("We suggest choosing Haymarket Bus Station as no buses run to Alnwick Castle from this stop");
+            } else {
+                const localStorage = window.localStorage;
+                localStorage.setItem("source", source.split(" ")[1].toLowerCase());
+                localStorage.setItem("destination", destination);
+                localStorage.setItem("date", selectedDate);
+                localStorage.setItem("time", time);
+                localStorage.setItem("travellers", travellers);
+                setTime("");
+                // Routing to next page
+                history.push(ROUTES.ALNWICKCASTLESEARCH);
+            }
         }
         else if (destination === "Auckland Castle") {
             // Not allowing user to pick dates when castle is closed
             if ((destination === "Auckland Castle" && isMonday(new Date(selectedDate))) || (destination === "Auckland Castle" && isTuesday(new Date(selectedDate)))) {
                 alert("Auckland Castle is closed on Mondays and Tuesdays");
             } else {
-                const localStorage = window.localStorage;
-                localStorage.setItem("source", source.split(" ")[1].toLowerCase());
-                localStorage.setItem("destination", destination);
-                localStorage.setItem("date", selectedDate);
-                localStorage.setItem("travellers", travellers);
-                history.push(ROUTES.AUCKLANDCASTLESEARCH);
+                if (source !== "Newcastle Eldon Square Bus Station") {
+                    alert("We suggest choosing Eldon Square Bus Station as no buses run to Auckland Castle from this stop");
+                } else {
+                    const localStorage = window.localStorage;
+                    localStorage.setItem("source", source.split(" ")[1].toLowerCase());
+                    localStorage.setItem("destination", destination);
+                    localStorage.setItem("date", selectedDate);
+                    localStorage.setItem("time", time);
+
+                    localStorage.setItem("travellers", travellers);
+                    history.push(ROUTES.AUCKLANDCASTLESEARCH);
+                }
             }
 
 
         } else if (destination === "Barnard Castle") {
-            const localStorage = window.localStorage;
-            localStorage.setItem("source", source.split(" ")[1].toLowerCase());
-            localStorage.setItem("destination", destination);
-            localStorage.setItem("date", selectedDate);
-            localStorage.setItem("travellers", travellers);
-            history.push(ROUTES.BARNARDCASTLESEARCH);
+            if (source !== "Newcastle Eldon Square Bus Station") {
+                alert("We suggest choosing Eldon Square Bus Station as no buses run to Barnard Castle from this stop");
+            } else {
+                const localStorage = window.localStorage;
+                localStorage.setItem("source", source.split(" ")[1].toLowerCase());
+                localStorage.setItem("destination", destination);
+                localStorage.setItem("date", selectedDate);
+                localStorage.setItem("time", time);
 
+                localStorage.setItem("travellers", travellers);
+                history.push(ROUTES.BARNARDCASTLESEARCH);
+            }
         } else if (destination === "Bamburgh Castle") {
-            const localStorage = window.localStorage;
-            localStorage.setItem("source", source.split(" ")[1].toLowerCase());
-            localStorage.setItem("destination", destination);
-            localStorage.setItem("date", selectedDate);
-            localStorage.setItem("travellers", travellers);
-            history.push(ROUTES.BAMBURGHCASTLESEARCH);
+            if (source !== "Newcastle Haymarket Bus Station") {
+                alert("We suggest choosing Haymarket Bus Station as no buses run to Bamburgh Castle from this stop");
+            } else {
+                const localStorage = window.localStorage;
+                localStorage.setItem("source", source.split(" ")[1].toLowerCase());
+                localStorage.setItem("destination", destination);
+                localStorage.setItem("date", selectedDate);
+                localStorage.setItem("time", time);
+                localStorage.setItem("travellers", travellers);
+                history.push(ROUTES.BAMBURGHCASTLESEARCH);
+            }
         }
 
     };
