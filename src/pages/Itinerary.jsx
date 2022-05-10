@@ -40,19 +40,37 @@ const Itinerary = () => {
         setDate(localStorage.getItem("date").split("T")[0]);
     }
         , [destination, localStorage]);
-console.log({castleData});
     return (
         <IonContent className="ion-margin-bottom">
             <IonRow className="itinerarybackgroundimage">
                 <IonCol className="cardcolumn">
                     <IonRow className="ion-padding-start">
                         <IonCol className="ion-padding-start ion-padding-top" size="12">
-                            <Link to={ROUTES.ALNWICKCASTLESEARCHRETURN}>
-                                <IonButton className="jollyButton ion-padding">
-                                    <FaAngleLeft size={24} />
-                                    <IonText className=" mytext ion-padding">Back</IonText>
-                                </IonButton>
-                            </Link>
+                            {
+                                destination === "Alnwick Castle" ?
+                                    (<Link to={ROUTES.ALNWICKCASTLESEARCHRETURN}>
+                                        <IonButton className="jollyButton ion-padding">
+                                            <FaAngleLeft size={24} />
+                                            <IonText className=" mytext ion-padding">Back</IonText>
+                                        </IonButton>
+                                    </Link>) : destination === "Auckland Castle" ? (<Link to={ROUTES.AUCKLANDCASTLESEARCHRETURN}>
+                                        <IonButton className="jollyButton ion-padding">
+                                            <FaAngleLeft size={24} />
+                                            <IonText className=" mytext ion-padding">Back</IonText>
+                                        </IonButton>
+                                    </Link>) : destination === "Bamburgh Castle" ? (<Link to={ROUTES.BAMBURGHCASTLESEARCHRETURN}>
+                                        <IonButton className="jollyButton ion-padding">
+                                            <FaAngleLeft size={24} />
+                                            <IonText className=" mytext ion-padding">Back</IonText>
+                                        </IonButton>
+                                    </Link>) : destination === "Barnard Castle" ? (<Link to={ROUTES.BARNARDCASTLESEARCHRETURN}>
+                                        <IonButton className="jollyButton ion-padding">
+                                            <FaAngleLeft size={24} />
+                                            <IonText className=" mytext ion-padding">Back</IonText>
+                                        </IonButton>
+                                    </Link>) : null
+
+                            }
                         </IonCol>
                     </IonRow>
                     <IonRow>
