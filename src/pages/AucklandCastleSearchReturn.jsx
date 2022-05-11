@@ -22,7 +22,7 @@ const AucklandCastleSearchReturn = () => {
     const [busData, setBusData] = useState([]);
     let time = localStorage.getItem("arrivalTime");
 
-    // On page load, useEffect is called which will set the destination to display in the dropdown
+    // On page load bus data is called from backend via axios, filtered to fit user selections and displayed
     useEffect(() => {
         axios.get("/97be7c80a79d4d89b953502b8bbdc9ae").then((response) => {
 
@@ -33,6 +33,8 @@ const AucklandCastleSearchReturn = () => {
                 const t = h + m;
                 const leavingTime = parseInt(time) + parseInt('0200');
                 const src = x.arrivalBusStop.split(" ")[0].toLowerCase();
+                // Checking to ensure it is a return bus, source is as selected by user and that the bus departs after user's selected time
+
                 return x.returnTrip === "1" && parseInt(t)
                     >= leavingTime && src === source;
             });

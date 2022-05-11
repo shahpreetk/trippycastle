@@ -53,7 +53,7 @@ const LargeNavbar = () => {
               </IonText>
             </Link>
           </IonCol>
-          {/* Plan Journey */}
+          {/* Plan Journey Button */}
           <IonCol className="ion-margin-end ion-text-end">
             <Link to={ROUTES.PLANJOURNEY} className="linkStyles">
               <IonButton className="jollyButton">

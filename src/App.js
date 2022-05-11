@@ -34,26 +34,20 @@ const Home = lazy(() => import("./pages/Home"));
 const Contact = lazy(() => import("./pages/Contact"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const PlanJourney = lazy(() => import("./pages/PlanJourney"));
-
 const AlnwickCastleSearch = lazy(() => import("./pages/AlnwickCastleSearch"));
 const AlnwickCastleSearchReturn = lazy(() => import("./pages/AlnwickCastleSearchReturn"));
-
-
 const AucklandCastleSearch = lazy(() => import("./pages/AucklandCastleSearch"));
 const AucklandCastleSearchReturn = lazy(() => import("./pages/AucklandCastleSearchReturn"));
-
 const BamburghCastleSearch = lazy(() => import("./pages/BamburghCastleSearch"));
 const BamburghCastleSearchReturn = lazy(() => import("./pages/BamburghCastleSearchReturn"));
-
 const BarnardCastleSearch = lazy(() => import("./pages/BarnardCastleSearch"));
 const BarnardCastleSearchReturn = lazy(() => import("./pages/BarnardCastleSearchReturn"));
-
 const NotFound = lazy(() => import("./pages/NotFound"));
-
 const Itinerary = lazy(() => import("./pages/Itinerary"));
 
 setupIonicReact();
 
+// Defining the base url for axios requests to the backend
 axios.defaults.baseURL = "http://localhost:8080/ttc/castle";
 
 const App = () => (
@@ -84,7 +78,7 @@ const App = () => (
         }
       >
         <IonPage>
-          {/* Displays small navbar when on phone */}
+          {/* Displays small navbar when on mobile */}
           <SmallNavbar />
           <IonContent fullscreen>
             {/* Displays large navbar on desktop */}

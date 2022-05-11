@@ -11,7 +11,7 @@ import {
     IonCol,
 } from "@ionic/react";
 import Footer from "../components/Footer";
-import { FaAngleLeft,FaBus, FaWalking } from "react-icons/fa";
+import { FaAngleLeft, FaBus, FaWalking } from "react-icons/fa";
 import "./BarnardCastleSearchReturn.css";
 import axios from "axios";
 
@@ -22,7 +22,7 @@ const BarnardCastleSearchReturn = () => {
     const [busData, setBusData] = useState([]);
     let time = localStorage.getItem("arrivalTime");
 
-    // On page load, useEffect is called which will set the destination to display in the dropdown
+    // On page load bus data is called from backend via axios, filtered to fit user selections and displayed
     useEffect(() => {
         axios.get("/c8fa379a934a4097b23706ce105accce").then((response) => {
 
@@ -33,6 +33,7 @@ const BarnardCastleSearchReturn = () => {
                 const t = h + m;
                 const leavingTime = parseInt(time) + parseInt('0200');
                 const src = x.arrivalBusStop.split(" ")[0].toLowerCase();
+                // Checking to ensure it is a return bus, source is as selected by user and that the bus departs after user's selected time
                 return x.returnTrip === "1" && parseInt(t)
                     >= leavingTime && src === source;
             });

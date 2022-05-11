@@ -18,12 +18,13 @@ import "./AlnwickCastleSearchReturn.css";
 
 
 const AlnwickCastleSearchReturn = () => {
-    const localStorage = window.localStorage;    // Using react hooks to set the journey details to the page
+    const localStorage = window.localStorage;
+    // Using react hooks to set the journey details to the page
     const source = localStorage.getItem("source");
     const [busData, setBusData] = useState([]);
     let time = localStorage.getItem("arrivalTime");
 
-    // On page load, useEffect is called which will set the destination to display in the dropdown
+    // On page load bus data is called from backend via axios, filtered to fit user selections and displayed
     useEffect(() => {
         axios.get("/bbc1ef6066024a3aa4913e8cfe5b2ecd").then((response) => {
 
@@ -34,6 +35,7 @@ const AlnwickCastleSearchReturn = () => {
                 const t = h + m;
                 const leavingTime = parseInt(time) + parseInt('0200');
                 const src = x.arrivalBusStop.split(" ")[0].toLowerCase();
+                 // Checking to ensure it is a return bus, source is as selected by user and that the bus departs after user's selected time
                 return x.returnTrip === "1" && parseInt(t)
                     >= leavingTime && src === source;
             });

@@ -23,7 +23,8 @@ const AucklandCastleSearch = () => {
     const source = localStorage.getItem("source");
     const [busData, setBusData] = useState([]);
 
-    // On page load, useEffect is called which will set the destination to display and bus data will be called from backend via axios
+    // On page load, useEffect is called which will set the destination to display
+    // Bus data is called from backend via axios, filtered to fit user inputs and displayed
     useEffect(() => {
         setDestination(localStorage.getItem("destination"));
         axios.get("/97be7c80a79d4d89b953502b8bbdc9ae").then((response) => {
@@ -33,6 +34,7 @@ const AucklandCastleSearch = () => {
                 const m = d.split(":")[1];
                 const t = h + m;
                 const src = x.departureBusStop.split(" ")[0].toLowerCase();
+                // Checking to ensure it is an outbound bus, source is as selected by user and that the bus departs after user's selected time
                 return x.returnTrip === "0" && t >= time && src === source;
             });
             departureBus.sort((a, b) => {
