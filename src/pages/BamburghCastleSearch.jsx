@@ -33,7 +33,7 @@ const BamburghCastleSearch = () => {
                 const h = d.split(":")[0];
                 const m = d.split(":")[1];
                 const t = h + m;
-                const src = x.departureBusStop.split(" ")[0].toLowerCase();
+                const src = x.sourceStop.split(" ")[0].toLowerCase();
                 // Checking to ensure it is an outbound bus, source is as selected by user and that the bus departs after user's selected time
                 return x.returnTrip === "0" && t >= time && src === source;
             });
@@ -78,7 +78,7 @@ const BamburghCastleSearch = () => {
                                 </IonRow>
                                 {/* Displays buses and their timings */}
                                 {busData.length > 0 ? busData.map((eachBus) => (
-                                    <IonRow key={eachBus.id} className="ticketoption1 ion-justify-content-center">
+                                    <IonRow key={eachBus.timetableId} className="ticketoption1 ion-justify-content-center">
                                         <IonCol tabIndex={eachBus.id} className="busDetailsCol">
                                             <Link onClick={() => {
                                                 localStorage.setItem("outboundBus", JSON.stringify(eachBus));

@@ -103,13 +103,14 @@ const Itinerary = () => {
                                                 <IonText className="ticketboxtext5">{outboundJourney.departureTime}</IonText>
                                             </IonCol>
                                             <IonCol size="6">
-                                                <IonText className="ticketboxtext5">{outboundJourney.departureBusStop}</IonText>
+                                                <IonText className="ticketboxtext5">{outboundJourney.sourceStop}</IonText>
                                             </IonCol>
                                         </IonRow>
                                         <IonRow className="ion-align-items-center">
                                             <IonCol size="5" className="ion-text-end">
                                                 <FaBus size={24} />
-                                                <IonText className="optionimage1 ion-no-margin" color="medium">{"  " + outboundJourney.busId}</IonText>
+                                                <IonText className="optionimage1 ion-no-margin" color="brand">{"  " + outboundJourney.name}</IonText>
+                                                <IonText className="optionimage1 ion-no-margin" color="medium">{"  " + outboundJourney.busNo}</IonText>
                                             </IonCol>
                                             <IonCol size="1" className="ion-text-center">
                                                 <BsArrowDown size={24} style={{ color: "black" }} />
@@ -123,12 +124,12 @@ const Itinerary = () => {
                                                 <IonText className="ticketboxtext5">{outboundJourney.arrivalTime}</IonText>
                                             </IonCol>
                                             <IonCol size="6">
-                                                <IonText className="ticketboxtext5">{outboundJourney.arrivalBusStop}</IonText>
+                                                <IonText className="ticketboxtext5">{outboundJourney.destination}</IonText>
                                             </IonCol>
                                         </IonRow>
                                         <IonRow>
                                             <IonCol className="ion-text-center">
-                                                {outboundJourney.walkingTime && <IonText>{outboundJourney.walkingTime} from {outboundJourney.arrivalBusStop} to reach {destination}</IonText>}
+                                                {outboundJourney.walkingTime && <IonText>{outboundJourney.walkingTime} from {outboundJourney.destination} to reach {destination}</IonText>}
                                             </IonCol>
                                         </IonRow>
                                     </IonCol>
@@ -146,7 +147,7 @@ const Itinerary = () => {
                                         </IonRow>
                                         <IonRow>
                                             <IonCol className="ion-text-center">
-                                                {returnJourney.walkingTime && <IonText>{returnJourney.walkingTime} from {destination} to reach {returnJourney.departureBusStop}</IonText>}
+                                                {returnJourney.walkingTime && <IonText>{returnJourney.walkingTime} from {destination} to reach {returnJourney.sourceStop}</IonText>}
                                             </IonCol>
                                         </IonRow>
                                         <IonRow>
@@ -154,13 +155,14 @@ const Itinerary = () => {
                                                 <IonText className="ticketboxtext5">{returnJourney.departureTime}</IonText>
                                             </IonCol>
                                             <IonCol size="6">
-                                                <IonText className="ticketboxtext5">{returnJourney.departureBusStop}</IonText>
+                                                <IonText className="ticketboxtext5">{returnJourney.sourceStop}</IonText>
                                             </IonCol>
                                         </IonRow>
                                         <IonRow className="ion-align-items-center">
                                             <IonCol size="5" className="ion-text-end">
                                                 <FaBus size={24} />
-                                                <IonText className="optionimage1 ion-no-margin" color="medium">{" " + returnJourney.busId}</IonText>
+                                                <IonText className="optionimage1 ion-no-margin" color="brand">{"  " + outboundJourney.name}</IonText>
+                                                <IonText className="optionimage1 ion-no-margin" color="medium">{" " + returnJourney.busNo}</IonText>
                                             </IonCol>
                                             <IonCol size="1" className="ion-text-center">
                                                 <BsArrowDown size={24} />
@@ -176,7 +178,7 @@ const Itinerary = () => {
                                                 <IonText className="ticketboxtext5">{returnJourney.arrivalTime}</IonText>
                                             </IonCol>
                                             <IonCol size="6">
-                                                <IonText className="ticketboxtext5">{returnJourney.arrivalBusStop}</IonText>
+                                                <IonText className="ticketboxtext5">{returnJourney.destination}</IonText>
                                             </IonCol>
                                         </IonRow>
 

@@ -21,6 +21,7 @@ import {
   IonContent,
   IonImg,
   IonRow,
+  IonText,
   IonTitle,
 } from "@ionic/react";
 import Footer from "../components/Footer";
@@ -32,6 +33,8 @@ const Home = () => {
   useEffect(() => {
     axios.get("/").then((response) => {
       setCastleData(response.data.obj);
+    }).catch((error) => {
+      console.log(error.message);
     });
   }, []);
 
@@ -64,7 +67,7 @@ const Home = () => {
       {/* Castles display section */}
       <IonRow className="ion-margin-vertical">
         {/* castleData currently comes from data folder */}
-        {castleData.map((eachCastle) => (
+        {castleData.length > 0 ? castleData.map((eachCastle) => (
           <IonCol key={eachCastle.id}>
             <IonCard className="card">
               <IonImg
@@ -80,7 +83,14 @@ const Home = () => {
               <IonCardContent>{eachCastle.description}</IonCardContent>
             </IonCard>
           </IonCol>
-        ))}
+        )) : (
+          <IonCol size="12" className="ion-text-center">
+          <IonText color="danger">
+            <h2>The Server is Sleeping Zzzz...</h2>
+            <h2>Please come back later 😁</h2>
+          </IonText>
+        </IonCol>)
+        }
       </IonRow>
       <Footer />
     </IonContent>

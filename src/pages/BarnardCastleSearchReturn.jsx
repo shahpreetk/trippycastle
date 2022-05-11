@@ -32,7 +32,7 @@ const BarnardCastleSearchReturn = () => {
                 const m = d.split(":")[1];
                 const t = h + m;
                 const leavingTime = parseInt(time) + parseInt('0200');
-                const src = x.arrivalBusStop.split(" ")[0].toLowerCase();
+                const src = x.destination.split(" ")[0].toLowerCase();
                 // Checking to ensure it is a return bus, source is as selected by user and that the bus departs after user's selected time
                 return x.returnTrip === "1" && parseInt(t)
                     >= leavingTime && src === source;
@@ -80,7 +80,7 @@ const BarnardCastleSearchReturn = () => {
                                 </IonRow>
                                 {/* Displays buses and their timings */}
                                 {busData.length > 0 ? busData.map((eachBus) => (
-                                    <IonRow key={eachBus.id} className="ticketoption1 ion-justify-content-center">
+                                    <IonRow key={eachBus.timetableId} className="ticketoption1 ion-justify-content-center">
                                         <IonCol tabIndex={eachBus.id} className="busDetailsCol">
                                             <Link onClick={() => {
                                                 localStorage.setItem("returnBus", JSON.stringify(eachBus));
