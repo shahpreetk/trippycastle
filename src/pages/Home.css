@@ -11,6 +11,10 @@
   margin-top: 5rem;
 }
 
+.noDecoration {
+  text-decoration: none;
+}
+
 .card {
   min-height: 600px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),

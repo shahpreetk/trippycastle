@@ -29,6 +29,41 @@
   border-bottom-width: 2px;
 }
 
+.jollyButton {
+  --background: rgba(2, 68, 142, 1);
+  --background: -moz-linear-gradient(
+    left,
+    rgba(2, 68, 142, 1) 0%,
+    rgba(1, 67, 141, 1) 44%,
+    rgba(1, 66, 140, 1) 100%
+  );
+  --background: -webkit-linear-gradient(
+    left,
+    rgba(2, 68, 142, 1) 0%,
+    rgba(1, 67, 141, 1) 44%,
+    rgba(1, 66, 140, 1) 100%
+  );
+  --background: -o-linear-gradient(
+    left,
+    rgba(2, 68, 142, 1) 0%,
+    rgba(1, 67, 141, 1) 44%,
+    rgba(1, 66, 140, 1) 100%
+  );
+  --background: -ms-linear-gradient(
+    left,
+    rgba(2, 68, 142, 1) 0%,
+    rgba(1, 67, 141, 1) 44%,
+    rgba(1, 66, 140, 1) 100%
+  );
+  --background: linear-gradient(
+    to right,
+    rgba(2, 68, 142, 1) 0%,
+    rgba(1, 67, 141, 1) 44%,
+    rgba(1, 66, 140, 1) 100%
+  );
+
+  --color: #ffffff;
+}
 .ticketboxtext {
   color: #61201c;
 }

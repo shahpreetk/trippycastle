@@ -79,7 +79,7 @@ const Itinerary = () => {
                                 <IonRow className="ticketboxrow ion-align-items-baseline">
                                     <IonCol size="8" className="ion-text-start">
                                         {/* Displays date of planned journey */}
-                                        <IonText className="ticketboxtext ticketboxtext1">Itinerary</IonText>
+                                        <IonText className="ticketboxtext ticketboxtext1">Your Itinerary</IonText>
                                         <IonText className="ticketboxtext">{" ---> "}</IonText>
                                         <IonText className="ticketboxtext2">{date}</IonText>
                                     </IonCol>
@@ -218,6 +218,15 @@ const Itinerary = () => {
                                         </IonRow></>) : <p>An error occured! Please try again</p>}
                             </IonCard>
                         </IonCol>
+                    </IonRow>
+                    <IonRow className="ion-justify-content-center ion-padding">
+                        <Link to={ROUTES.PLANJOURNEY} style={{textDecoration:"none"}}>
+                        <IonButton className="ticketboxbutton linkStyles" size="large" color="brand" expand="full">
+                            <IonText className="ion-padding">
+                                Plan Another Journey
+                            </IonText>
+                        </IonButton>
+                        </Link>
                     </IonRow>
                 </IonCol>
             </IonRow>

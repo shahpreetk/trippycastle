@@ -10,7 +10,6 @@
 /* OM: import links and routes */
 import { useEffect, useState } from "react";
 import axios from "axios";
-
 import {
   IonCard,
   IonCardContent,
@@ -24,6 +23,8 @@ import {
   IonText,
   IonTitle,
 } from "@ionic/react";
+import { Link } from "react-router-dom";
+import * as ROUTES from '../constants/routes';
 import Footer from "../components/Footer";
 import "./Home.css";
 
@@ -69,6 +70,7 @@ const Home = () => {
         {/* castleData currently comes from data folder */}
         {castleData.length > 0 ? castleData.map((eachCastle) => (
           <IonCol key={eachCastle.id}>
+            <Link to={ROUTES.PLANJOURNEY} className="noDecoration">
             <IonCard className="card">
               <IonImg
                 className="imageSize"
@@ -81,7 +83,8 @@ const Home = () => {
                 <IonCardSubtitle>Accessibility options - {eachCastle.accessibility}</IonCardSubtitle>
               </IonCardHeader>
               <IonCardContent>{eachCastle.description}</IonCardContent>
-            </IonCard>
+              </IonCard>
+            </Link>
           </IonCol>
         )) : (
           <IonCol size="12" className="ion-text-center">

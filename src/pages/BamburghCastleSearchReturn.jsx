@@ -76,7 +76,7 @@ const BamburghCastleSearchReturn = () => {
                                 </IonRow>
 
                                 <IonRow className="optionsrow">
-                                    <IonLabel className="ticketboxlabel">Return Journey Options:</IonLabel>
+                                    <IonLabel className="ticketboxlabel">Return Journey Options: (after exploring the castle for two hours)</IonLabel>
                                 </IonRow>
                                 {/* Displays buses and their timings */}
                                 {busData.length > 0 ? busData.map((eachBus) => (

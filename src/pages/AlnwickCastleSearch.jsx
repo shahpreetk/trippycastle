@@ -115,7 +115,9 @@ console.log({busData})
                                         </IonCol>
                                     </IonRow>
                                 )) : <IonRow>
-                                    <IonText className="ion-margin" color="light"><h2>No buses found</h2></IonText>
+                                        <IonText className="ion-margin" color="light"><h2>No buses found.
+                                            <br />
+                                            Please select an earlier time or the castle will close by the time you reach.</h2></IonText>
                                 </IonRow>}
                             </IonCard>
 

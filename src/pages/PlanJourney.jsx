@@ -104,6 +104,8 @@ const PlanJourney = () => {
                 localStorage.setItem("travellers", travellers);
                 history.push(ROUTES.BAMBURGHCASTLESEARCH);
             }
+        } else {
+            alert("Please choose a source, destination, date and time");
         }
 
     };
@@ -119,6 +121,7 @@ const PlanJourney = () => {
                                 <IonItem className="ticketboxitem">
                                     <IonLabel>Travel From</IonLabel>
                                     <IonSelect
+                                        required
                                         value={source}
                                         placeholder="Select One"
                                         onIonChange={e => setSource(e.detail.value)}
@@ -133,6 +136,7 @@ const PlanJourney = () => {
                                 <IonItem className="ticketboxitem">
                                     <IonLabel>Travel To</IonLabel>
                                     <IonSelect
+                                        required
                                         value={destination}
                                         placeholder="Select One"
                                         onIonChange={e => setDestination(e.detail.value)} >
@@ -149,6 +153,7 @@ const PlanJourney = () => {
                             <IonItem className="ticketboxitem">
                                 <IonLabel>Number of Travellers</IonLabel>
                                 <IonSelect
+                                    required
                                     value={travellers}
                                     placeholder="1"
                                     onIonChange={e => setTravellers(e.detail.value)}
@@ -164,7 +169,7 @@ const PlanJourney = () => {
 
                         {/* Datepicker to select date and time of journey */}
                         <IonRow className="ion-justify-content-center ion-padding">
-                            <IonDatetime locale="en-GB" value={selectedDate} size="fixed" hourCycle="h24" min={minDate.toISOString().substring(0, 10)} max={maxDate.toISOString().substring(0, 10)} onIonChange={e => {
+                            <IonDatetime required locale="en-GB" value={selectedDate} size="fixed" hourCycle="h24" min={minDate.toISOString().substring(0, 10)} max={maxDate.toISOString().substring(0, 10)} onIonChange={e => {
                                 setSelectedDate(e.detail.value);
                                 let d = e.detail.value.split('T')[1];
 
