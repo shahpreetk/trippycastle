@@ -18,13 +18,14 @@ import Footer from "../components/Footer";
 import "./PlanJourney.css";
 
 const PlanJourney = () => {
+    const localStorage = window.localStorage;
     const history = useHistory();
     // Using react hooks to set the journey details
-    const [source, setSource] = useState("");
-    const [destination, setDestination] = useState("");
-    const [travellers, setTravellers] = useState("1");
-    const [selectedDate, setSelectedDate] = useState("");
-    const [time, setTime] = useState("");
+    const [source, setSource] = useState(localStorage.getItem("source"));
+    const [destination, setDestination] = useState(localStorage.getItem("destination"));
+    const [travellers, setTravellers] = useState(localStorage.getItem("travellers"));
+    const [selectedDate, setSelectedDate] = useState(localStorage.getItem("date"));
+    const [time, setTime] = useState(localStorage.getItem("time"));
 
     // Setting a minimum and maximum date for the date picker
     const minDate = new Date();
@@ -45,11 +46,10 @@ const PlanJourney = () => {
 
         // Saves the journey details to local storage onClick of "GET TICKETS" button
         if (destination === "Alnwick Castle") {
-            if (source !== "Newcastle Haymarket Bus Station") {
+            if (source !== "haymarket ") {
                 alert("We suggest choosing Haymarket Bus Station as no buses run to Alnwick Castle from this stop");
             } else {
-                const localStorage = window.localStorage;
-                localStorage.setItem("source", source.split(" ")[1].toLowerCase());
+                localStorage.setItem("source", source);
                 localStorage.setItem("destination", destination);
                 localStorage.setItem("date", selectedDate);
                 localStorage.setItem("time", time);
@@ -64,11 +64,11 @@ const PlanJourney = () => {
             if ((destination === "Auckland Castle" && isMonday(new Date(selectedDate))) || (destination === "Auckland Castle" && isTuesday(new Date(selectedDate)))) {
                 alert("Auckland Castle is closed on Mondays and Tuesdays");
             } else {
-                if (source !== "Newcastle Eldon Square Bus Station") {
+                if (source !== "eldon") {
                     alert("We suggest choosing Eldon Square Bus Station as no buses run to Auckland Castle from this stop");
                 } else {
                     const localStorage = window.localStorage;
-                    localStorage.setItem("source", source.split(" ")[1].toLowerCase());
+                    localStorage.setItem("source", source);
                     localStorage.setItem("destination", destination);
                     localStorage.setItem("date", selectedDate);
                     localStorage.setItem("time", time);
@@ -80,11 +80,11 @@ const PlanJourney = () => {
 
 
         } else if (destination === "Barnard Castle") {
-            if (source !== "Newcastle Eldon Square Bus Station") {
+            if (source !== "eldon") {
                 alert("We suggest choosing Eldon Square Bus Station as no buses run to Barnard Castle from this stop");
             } else {
                 const localStorage = window.localStorage;
-                localStorage.setItem("source", source.split(" ")[1].toLowerCase());
+                localStorage.setItem("source", source);
                 localStorage.setItem("destination", destination);
                 localStorage.setItem("date", selectedDate);
                 localStorage.setItem("time", time);
@@ -93,11 +93,11 @@ const PlanJourney = () => {
                 history.push(ROUTES.BARNARDCASTLESEARCH);
             }
         } else if (destination === "Bamburgh Castle") {
-            if (source !== "Newcastle Haymarket Bus Station") {
+            if (source !== "haymarket") {
                 alert("We suggest choosing Haymarket Bus Station as no buses run to Bamburgh Castle from this stop");
             } else {
                 const localStorage = window.localStorage;
-                localStorage.setItem("source", source.split(" ")[1].toLowerCase());
+                localStorage.setItem("source", source);
                 localStorage.setItem("destination", destination);
                 localStorage.setItem("date", selectedDate);
                 localStorage.setItem("time", time);
@@ -126,8 +126,8 @@ const PlanJourney = () => {
                                         placeholder="Select One"
                                         onIonChange={e => setSource(e.detail.value)}
                                     >
-                                        <IonSelectOption value="Newcastle Haymarket Bus Station">Newcastle Haymarket Bus Station</IonSelectOption>
-                                        <IonSelectOption value="Newcastle Eldon Square Bus Station">Newcastle Eldon Square Bus Station</IonSelectOption>
+                                        <IonSelectOption value="haymarket">Newcastle Haymarket Bus Station</IonSelectOption>
+                                        <IonSelectOption value="eldon">Newcastle Eldon Square Bus Station</IonSelectOption>
                                     </IonSelect>
                                 </IonItem>
                             </IonCol>
@@ -155,7 +155,7 @@ const PlanJourney = () => {
                                 <IonSelect
                                     required
                                     value={travellers}
-                                    placeholder="1"
+                                    placeholder="Select One"
                                     onIonChange={e => setTravellers(e.detail.value)}
                                 >
                                     <IonSelectOption value="1">1</IonSelectOption>
