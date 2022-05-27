@@ -8,6 +8,8 @@ Your team is being asked to develop an app to allow University students to plan 
 • Bamburgh Castle
 • Barnard Castle
 Each day trip will start and end at either Newcastle Haymarket Bus Station or Newcastle Eldon Square Bus Station depending on the castle visited.
+
+You can find more information in the project [wiki](https://github.com/shahpreetk/trippycastle/wiki).
 ___
 ### 🛠 Built with
 
