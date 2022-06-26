@@ -8,12 +8,18 @@ Your team is being asked to develop an app to allow University students to plan 
 • Bamburgh Castle
 • Barnard Castle
 Each day trip will start and end at either Newcastle Haymarket Bus Station or Newcastle Eldon Square Bus Station depending on the castle visited.
+
+### **You can find more information in the project [wiki](https://github.com/shahpreetk/trippycastle/wiki).**
 ___
 ### 🛠 Built with
 
 UI - The prototyping and designing of the website was done on Adobe XD.
 
 Frontend - The frontend of this journey planning system is made using the Reactjs UI library. It helps in making a single-page application (SPA) that ensures fast rendering. The Ionic Framework has been used for the styling of the web app. To give the user a feeling of content being loaded, we show a loader using react-loading-skeleton after which the backend sends the data using Axios. The state management of the user selections has been done using React Hooks.
+
+Backend - The back-end program is developed by using the framework of Springboot and myBatis.
+
+Database - The database is created on MySQL
 ___
 ### 🔨 Installation and Setting it Up
 
@@ -29,7 +35,7 @@ ionic serve
 ```
 
 
-Please also note that you will need to run the backend locally.
+Please also note that the backend and database are not available.
 ___
 ### 🖥 Is it hosted?
 
