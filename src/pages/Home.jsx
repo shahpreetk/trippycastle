@@ -90,7 +90,7 @@ const Home = () => {
           <IonCol size="12" className="ion-text-center">
           <IonText color="danger">
             <h2>The Server is Sleeping Zzzz...</h2>
-            <h2>Please come back later 😁</h2>
+                <h2>Please go to the <a href="https://github.com/shahpreetk/trippycastle/wiki" target="_blank" rel="noreferrer">Project Wiki</a> for more information 😁</h2>
           </IonText>
         </IonCol>)
         }
